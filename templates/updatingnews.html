@@ -1,0 +1,76 @@
+<!--Store this code in 'register.html' file inside the 'templates' folder-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<title> Existing News display </title>
+		
+		<link href="../static/bootstrap.min.css" rel="stylesheet">
+		
+		 <style>
+			  .bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+			  }
+
+			  @media (min-width: 768px) {
+				.bd-placeholder-img-lg {
+				  font-size: 3.5rem;
+				}
+			  }
+		</style>
+	
+	<link href="../static/heroes.css" rel="stylesheet">
+	</head>
+	
+<body>
+	
+<main>
+	
+  <div class="container">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href=" {{ url_for('addnews')}} " class="nav-link" aria-current="page">Add-News</a></li>
+        <li class="nav-item"><a href=" {{ url_for('displaynews')}} " class="nav-link">Display-News</a></li>
+        <li class="nav-item"><a href=" {{ url_for('updatingnews')}} " class="nav-link active">Update-News</a></li>
+        <li class="nav-item"><a href=" {{ url_for('delete')}} " class="nav-link">Delete-News</a></li>
+        <li class="nav-item"><a href=" {{ url_for('logout')}} " class="nav-link">Logout</a></li>
+      </ul>
+    </header>
+  </div>
+
+
+<div class="content">
+  <div class="table-responsive">
+  {% block content %}
+  <form class="p-4 p-md-5 border rounded-3 bg-light" action="{{ url_for('updatingnews')}}" method="post" autocomplete="off">
+  <table class="table align-middle">
+    
+      <tr>
+        <td> Email: </td> <td> <input type = "text" name = "email" placeholder = "Enter your email"> </td>
+      </tr>
+       <tr>
+        <td> Heading: </td> <td> <input type="text" name = "heading" placeholder = "Enter New heading"> </td>
+      </tr>
+       <tr>
+        <td> subheading: </td> <td> <input type="text" name = "subheading"  placeholder = "Enter new Sub heading"> </td>
+      </tr>
+       <tr>
+        <td> content: </td> <td> <input type="text" name = "content" placeholder = "Enter Updated news"> </td>
+      </tr>
+      <tr>
+        <td> <input type = "submit" value = "update"> </td>
+      </tr>
+  </table>
+  </form>
+  {% endblock %}
+  </div>
+</div>
+</main>
+
+</body>
+</html>

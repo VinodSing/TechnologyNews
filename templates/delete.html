@@ -1,0 +1,55 @@
+<!--Store this code in 'register.html' file inside the 'templates' folder-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<title> Existing News display </title>
+		
+		<link href="../static/bootstrap.min.css" rel="stylesheet">
+		
+		 <style>
+			  .bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+			  }
+
+			  @media (min-width: 768px) {
+				.bd-placeholder-img-lg {
+				  font-size: 3.5rem;
+				}
+			  }
+		</style>
+	
+	<link href="../static/heroes.css" rel="stylesheet">
+	</head>
+	
+<body>
+	
+<main>
+	<div class="container">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href=" {{ url_for('addnews')}} " class="nav-link" aria-current="page">Add-News</a></li>
+        <li class="nav-item"><a href=" {{ url_for('displaynews')}} " class="nav-link">Display-News</a></li>
+        <li class="nav-item"><a href=" {{ url_for('updatingnews')}} " class="nav-link">Update-News</a></li>
+        <li class="nav-item"><a href=" {{ url_for('delete')}} " class="nav-link active">Delete-News</a></li>
+        <li class="nav-item"><a href=" {{ url_for('logout')}} " class="nav-link">Logout</a></li>
+      </ul>
+    </header>
+  </div>
+
+    <p>
+        <h1> Please enter your email and we will delete the news for you </h1>
+        <form action = "{{ url_for('delete')}}" method = "post">
+            <input type = "email" name = "email"> </input>
+            <input type = "submit" value = "submit"></input>
+        </form
+    </p>
+</main>
+
+</body>
+</html>

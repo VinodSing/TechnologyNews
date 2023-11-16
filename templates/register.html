@@ -1,0 +1,95 @@
+<!--Store this code in 'register.html' file inside the 'templates' folder-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<title> Register Form </title>
+		
+		<link href="../static/bootstrap.min.css" rel="stylesheet">
+		
+		 <style>
+			  .bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+			  }
+
+			  @media (min-width: 768px) {
+				.bd-placeholder-img-lg {
+				  font-size: 3.5rem;
+				}
+			  }
+		</style>
+	
+	<link href="../static/heroes.css" rel="stylesheet">
+	</head>
+	
+<body>
+	
+<main>
+	
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1 ">
+        <a class="btn btn-sm btn-outline-secondary" href=" {{ url_for('index') }} ">HOME</a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-da" href=" {{ url_for('index') }} ">Tech & Financial News</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href=" {{ url_for('signin')}} ">SIGN IN</a>
+      </div>
+    </div>
+  </header>
+
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Sign Up Here !!</h1>
+		<hr class="my-4">
+        <p class="col-lg-10 fs-4"> We bring you daily updates on Technology, finance and also help you in making personal finanical decisions. </p>
+      </div>
+	  
+      <div class="col-md-10 mx-auto col-lg-5">
+	  
+        <form class="p-4 p-md-5 border rounded-3 bg-light" action="{{ url_for('register')}}" method="post" autocomplete="off">
+          <div class="msg">{{ msg }}</div>
+			
+          <div class="form-floating mb-3" >
+             User Name <input type="text" class="form-control" name="username"  placeholder="User Name" id="username" required>
+          </div>
+		  <div class="form-floating mb-3">
+             Contact <input type="text" class="form-control" name="contact" placeholder="+91- 10 digit phone number" id="contact">
+          </div>
+		  <div class="form-floating mb-3">
+             Email Address<input type="email" class="form-control" name="email" placeholder="name@example.com" id="email" required>
+          </div>
+          <div class="form-floating mb-3">
+            Password<input type="password" class="form-control" name="password" placeholder="Password" id="password" required>
+          </div>
+          <div class="checkbox mb-3">
+            <input type="checkbox" value="remember-me"> Remember me
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit" value = "Register">Sign up</button>
+          <hr class="my-4">
+          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+        </form>
+		
+      </div>
+    </div>
+  </div>
+  
+		
+</main>	
+	
+	<script src="../static/bootstrap.bundle.min.js"></script>
+	
+</body>
+</html>

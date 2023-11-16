@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Tech 'n' Financial News</title>
+  
+
+    <!-- Bootstrap core CSS -->
+	<link href="../static/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	  
+    </style>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    
+    <link href="../static/blog.css" rel="stylesheet">
+	<link href="../static/features.css" rel="stylesheet">
+	<link href="../static/carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    
+
+<main class="container">
+
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1 ">
+        <a class="btn btn-sm btn-outline-secondary" href=" {{ url_for('signin')}} ">Sign In</a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-da" href="{{ url_for('index')}}">Tech & Financial News</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href=" {{ url_for('register')}} ">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 link-secondary" href= "{{ url_for('techno')}}">Technology</a>
+      <a class="p-2 link-secondary" href=" {{ url_for('crypto')}} ">Cyrpto Curreny</a>
+      <a class="p-2 link-secondary" href=" {{ url_for('stock')}} ">Stock Market</a>
+    </nav>
+  </div>
+</div>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../static/techno.jpg" class="d-block w-100" alt="technology">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../static/crypto.jpg" class="d-block w-100" alt="Crypto">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Crypto Currency</h5>
+        <p>News on latest CryptoCurrency</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../static/stock.jpg" class="d-block w-100" alt="Stocks">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>NSE & BSE</h5>
+        <p>News on Indias Top trending stocks</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  
+  
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Richard Branson's Virgin Galactic Cleared for Takeoff as Space Tourism Race Heats Up</h1>
+      <p class="lead my-3">Billionaire Richard Branson's spaceship company Virgin Galactic said on Friday it received approval from the US aviation safety regulator to fly people to space, turning up the pressure on rivals in the nascent and expensive space tourism sector.</p>
+      <p class="lead mb-0"><a href="https://gadgets.ndtv.com/science/news/richard-branson-virgin-galactic-clear-takeoff-space-travel-tourism-spacex-blue-origin-jeff-bezos-elon-musk-2472446" class="text-white fw-bold">Continue reading...</a></p>
+    </div>
+  </div>
+  
+  
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Technology
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Samsung Galaxy A20 Receiving Android 11-Based One UI 3.1 Update in India. </strong> Samsung Galaxy A20 is reportedly receiving a stable version of the Android 11-based One UI 3.1 update in India. Alongside, the update is also bundled with the June 2021 Android security patch. Samsung rolled out the Android 11 update for the Galaxy A20 in Russia a couple of weeks ago. The smartphone was launched in India in April with Android 9 out-of-the-box and subsequently received a stable Android 10 update in 2020. This is expected to be the last major OS upgrade for the Galaxy A20.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Crypto Currency
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Bitcoin, Ethereum lead rally as market recover; Dogecoin gains nearly 17%</strong> Global cryptocurrency market is slowly and steadily showing signs of recovery with top two coins—Bitcoin and Ethereum — starting to trade in green on Friday afternoon. Both of these coins tanking by 3 to 5 per cent respectively during Thursday's trade. The overall global cryptocurrency market has been under tremendous pressure due to China's aggressive crackdown in the recent past, however, the experts cited 'Death Cross' on technical chart as the major reason behind recent correction. It is a technical chart pattern indicating the potential for a major sell-off. 
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Stocks
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong> Nifty to make a dash above 16K level in July series, rollover data suggests</strong> The domestic market is showcasing resilience amid the global equity volatility over the past two weeks. The index is at levels last seen in February before the pandemic struck, suggesting traders see little need to hedge against downside, said analysts.
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<div class="row mb-2">
+
+<div class="d-flex position-relative">
+        <img src="../static/whatsapp.jpg" height = "200" width = "200" class="flex-shrink-0 me-3" alt="whatsapp">
+  <div>
+    <h5 class="mt-0">WhatsApp set to change in 2 big and interesting ways soon!</h5>
+    <p>Two new WhatsApp features are looking to entice you into spending more time on the messenger app. Will they be engrossing or just duds? Take a look at what is coming first. A major WhatsApp update was rolled out for the voice messages feature recently. It allowed users to change playback speed by as much as 1.5x and 2x. This feature is available on WhatsApp iOS, Android and Web-based platforms. While all of this may be useful for some and others may even find it funny.</p>
+    <a href="https://tech.hindustantimes.com/tech/news/whatsapp-web-voice-messages-sticker-sharing-how-whatsapp-update-will-roll-out-new-feature-71624620623538.html" class="stretched-link">Continue reading</a>
+  </div>
+</div> 
+<br>
+<br><br>
+
+<div class="row g-0 bg-light position-relative">
+  <div class="col-md-6 mb-md-0 p-md-4"> <br>
+    <img src="../static/bitcoin.jpg" height = "250" width = "200" class="w-100" alt="bitcoin">
+  </div>
+  <div class="col-md-6 p-4 ps-md-0"><br><br>
+    <h5 class="mt-0">Bitcoin Banished !</h5>
+    <p>Africrypt, a cryptocurrency investment firm in South Africa, run by two brothers — CEO Raees Cajee and COO Ameer Cajee — is under global scrutiny right now after up to $3.6 billion (roughly Rs. 26,700 crores) worth of Bitcoin disappeared from it. What's even more shocking is that there is no trace of the two brothers who ran the firm, that included even celebrity investors. </p>
+    <a href="https://gadgets.ndtv.com/cryptocurrency/news/bitcoin-price-cryptocurrency-scam-africrypt-south-africa-firm-vanish-brothers-raees-ameer-cajee-usd-3-6-billion-2472276" class="stretched-link">Continue reading</a>
+  </div>
+</div>
+<br><br><br>
+
+<div class="alert alert-info text-center fs-2 fw-bold" role="alert">
+  Check Out the Top 4 Stocks for Today!
+</div>
+
+<table class="table table-dark table-striped">
+  <tr>
+    <th>Company Name</th>
+    <th>Last price</th>
+    <th>New price</th>
+    <th>Market cap</th>
+  </tr>
+  <tr>
+    <td>Reliance</td>
+    <td>2104.30</td>
+    <td>2368.80</td>
+    <td>1,356,242.36</td>
+  </tr>
+  <tr>
+    <td>TCS</td>
+    <td>3380.70</td>
+    <td>3382</td>
+    <td>1,250,538.30</td>
+  </tr>
+  <tr>
+    <td>HDFC Bank</td>
+    <td>1514.15</td>
+    <td>1,650.00</td>
+    <td>836,426.69</td>
+  </tr>
+  <tr>
+    <td>Infosys</td>
+    <td>1,574.45</td>
+    <td>1,574.45</td>
+    <td>670,915.93</td>
+  </tr>
+</table>
+
+</div>
+  
+</main>
+
+<footer class="blog-footer">
+  <p>Python Project Build By <a href="https://getbootstrap.com/">Vinod</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
