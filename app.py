@@ -1,19 +1,13 @@
 # Store this code in 'app.py' file
+
 from flask import Flask, render_template, request, redirect, url_for, session
-# from flask_mysqldb import MySQL
 from flaskext.mysql import MySQL
-# import MySQLdb.cursors
 import pymysql
 import re
 
 app = Flask(__name__)
 
 app.secret_key = 'your secret key'
-
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_USER'] = 'root'
-# app.config['MYSQL_PASSWORD'] = 'root'
-# app.config['MYSQL_DB'] = 'technews'
 
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 app.config['MYSQL_DATABASE_USER'] = 'root'
@@ -23,19 +17,6 @@ app.config['MYSQL_DATABASE_DB'] = 'technews'
 # mysql = MySQL(app)
 mysql = MySQL(cursorclass=pymysql.cursors.DictCursor)
 mysql.init_app(app)
-
-# create cursor object
-# technews = MySQL(
-# 	app, 
-# 	prefix="technews", 
-# 	host="localhost", 
-# 	user="root", 
-# 	password="12345678", 
-# 	db="technews", 
-# 	autocommit=True, 
-# 	cursorclass=pymysql.cursors.DictCursor
-# )
-# cursor = mysql.get_db().cursor()
 
 @app.route('/')
 @app.route('/index')
@@ -66,7 +47,7 @@ def addnews():
 		heading = request.form['heading']
 		subheading = request.form['subheading']
 		content = request.form['content']
-		# cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+		# create cursor object
 		cursor = mysql.get_db().cursor()
 		cursor.execute('SELECT * FROM usernews WHERE email = % s and heading = % s', (email, heading, ))
 		temp = cursor.fetchone()
@@ -94,7 +75,7 @@ def updatingnews():
 			heading = request.form['heading']
 			subheading = request.form['subheading']
 			content = request.form['content']
-            # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+			# create cursor object
 			cursor = mysql.get_db().cursor()
 			cursor.execute('SELECT * FROM usernews  WHERE email = % s', (email, ))
 			account = cursor.fetchone()
@@ -112,7 +93,7 @@ def signin():
 	if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
 		email = request.form['email']
 		password = request.form['password']
-		# cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+		# create cursor object
 		cursor = mysql.get_db().cursor()
 		cursor.execute('SELECT * FROM register WHERE email = % s AND password = % s', (email, password, ))
 		account = cursor.fetchone()
@@ -139,7 +120,7 @@ def register():
 		password = request.form['password']
 		email = request.form['email']
 		contact = request.form['contact']
-		# cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+		# create cursor object
 		cursor = mysql.get_db().cursor()
 		cursor.execute('SELECT * FROM register WHERE username = % s', (username, ))
 		account = cursor.fetchone()
@@ -166,7 +147,7 @@ def displaynews():
 	if 'loggedin' in session:
 		if request.method == 'POST' and 'email' in request.form:
 			email = request.form['email']
-			# cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+			# create cursor object
 			cursor = mysql.get_db().cursor()
 			cursor.execute('SELECT * FROM usernews WHERE email = % s', (session['email'], ))
 			account = cursor.fetchone()
@@ -178,7 +159,7 @@ def delete():
 	if 'loggedin' in session:
 		if request.method == 'POST' and 'email' in request.form:
 			email = request.form['email']
-            # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+			# create cursor object
 			cursor = mysql.get_db().cursor()
 			cursor.execute('DELETE FROM usernews WHERE email = % s', (session['email'], ))
 			mysql.connection.commit()
