@@ -14,7 +14,7 @@ app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = '12345678'
 app.config['MYSQL_DATABASE_DB'] = 'technews'
 
-# mysql = MySQL(app)
+# Initialize mysql with our Flask App
 mysql = MySQL(cursorclass=pymysql.cursors.DictCursor)
 mysql.init_app(app)
 
